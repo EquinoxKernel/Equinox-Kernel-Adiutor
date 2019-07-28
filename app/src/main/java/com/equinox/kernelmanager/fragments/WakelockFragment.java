@@ -19,7 +19,7 @@
  *
  */
 
-package com.smartpack.kernelmanager.fragments;
+package com.equinox.kernelmanager.fragments;
 
 import com.grarak.kerneladiutor.R;
 import com.grarak.kerneladiutor.fragments.ApplyOnBootFragment;
@@ -33,12 +33,11 @@ import com.grarak.kerneladiutor.views.recyclerview.SelectView;
 import com.grarak.kerneladiutor.views.recyclerview.SwitchView;
 import com.grarak.kerneladiutor.views.recyclerview.TitleView;
 
-import com.smartpack.kernelmanager.utils.Wakelocks;
-import com.smartpack.kernelmanager.utils.WakeLockInfo;
+import com.equinox.kernelmanager.utils.Wakelocks;
+import com.equinox.kernelmanager.utils.WakeLockInfo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 /**

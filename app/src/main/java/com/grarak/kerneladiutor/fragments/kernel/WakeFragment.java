@@ -35,7 +35,7 @@ import com.grarak.kerneladiutor.views.recyclerview.SeekBarView;
 import com.grarak.kerneladiutor.views.recyclerview.SelectView;
 import com.grarak.kerneladiutor.views.recyclerview.SwitchView;
 
-import com.smartpack.kernelmanager.recyclerview.CheckBoxView;
+import com.equinox.kernelmanager.recyclerview.CheckBoxView;
 
 import java.util.ArrayList;
 import java.util.List;

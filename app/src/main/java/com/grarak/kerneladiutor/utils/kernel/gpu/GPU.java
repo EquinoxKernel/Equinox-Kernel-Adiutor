@@ -19,9 +19,9 @@
  */
 package com.grarak.kerneladiutor.utils.kernel.gpu;
 
-import com.smartpack.kernelmanager.utils.Adrenoboost;
-import com.smartpack.kernelmanager.utils.DevfreqBoost;
-import com.smartpack.kernelmanager.utils.GPUMisc;
+import com.equinox.kernelmanager.utils.Adrenoboost;
+import com.equinox.kernelmanager.utils.DevfreqBoost;
+import com.equinox.kernelmanager.utils.GPUMisc;
 
 /**
  * Created by willi on 12.05.16.

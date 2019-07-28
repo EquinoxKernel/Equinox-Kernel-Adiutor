@@ -19,7 +19,7 @@
  *
  */
 
-package com.smartpack.kernelmanager.recyclerview;
+package com.equinox.kernelmanager.recyclerview;
 
 import android.app.Activity;
 import android.content.Context;

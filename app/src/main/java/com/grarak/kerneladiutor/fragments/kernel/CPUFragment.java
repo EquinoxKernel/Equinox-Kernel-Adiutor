@@ -43,11 +43,10 @@ import com.grarak.kerneladiutor.views.recyclerview.RecyclerViewItem;
 import com.grarak.kerneladiutor.views.recyclerview.SeekBarView;
 import com.grarak.kerneladiutor.views.recyclerview.SelectView;
 import com.grarak.kerneladiutor.views.recyclerview.SwitchView;
-import com.grarak.kerneladiutor.views.recyclerview.TitleView;
 import com.grarak.kerneladiutor.views.recyclerview.XYGraphView;
 
-import com.smartpack.kernelmanager.utils.CPUInputBoost;
-import com.smartpack.kernelmanager.utils.MSMLimiter;
+import com.equinox.kernelmanager.utils.CPUInputBoost;
+import com.equinox.kernelmanager.utils.MSMLimiter;
 
 import java.util.ArrayList;
 import java.util.Arrays;

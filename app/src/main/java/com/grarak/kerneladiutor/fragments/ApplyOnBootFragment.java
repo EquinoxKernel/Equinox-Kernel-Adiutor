@@ -49,8 +49,8 @@ import com.grarak.kerneladiutor.fragments.kernel.VMFragment;
 import com.grarak.kerneladiutor.fragments.kernel.WakeFragment;
 import com.grarak.kerneladiutor.utils.Prefs;
 
-import com.smartpack.kernelmanager.fragments.KLapseFragment;
-import com.smartpack.kernelmanager.fragments.WakelockFragment;
+import com.equinox.kernelmanager.fragments.KLapseFragment;
+import com.equinox.kernelmanager.fragments.WakelockFragment;
 
 import java.util.HashMap;
 

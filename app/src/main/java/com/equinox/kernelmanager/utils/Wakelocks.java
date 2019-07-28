@@ -19,7 +19,7 @@
  *
  */
 
-package com.smartpack.kernelmanager.utils;
+package com.equinox.kernelmanager.utils;
 
 import android.content.Context;
 
@@ -33,7 +33,6 @@ import com.grarak.kerneladiutor.utils.root.RootUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 /**

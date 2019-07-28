@@ -36,19 +36,17 @@ import com.grarak.kerneladiutor.utils.kernel.cpuhotplug.MPDecision;
 import com.grarak.kerneladiutor.utils.kernel.cpuhotplug.MakoHotplug;
 import com.grarak.kerneladiutor.utils.kernel.cpuhotplug.MSMHotplug;
 import com.grarak.kerneladiutor.views.recyclerview.CardView;
-import com.grarak.kerneladiutor.views.recyclerview.DescriptionView;
 import com.grarak.kerneladiutor.views.recyclerview.GenericSelectView;
 import com.grarak.kerneladiutor.views.recyclerview.RecyclerViewItem;
 import com.grarak.kerneladiutor.views.recyclerview.SeekBarView;
 import com.grarak.kerneladiutor.views.recyclerview.SelectView;
 import com.grarak.kerneladiutor.views.recyclerview.SwitchView;
 
-import com.smartpack.kernelmanager.utils.MSMSleeper;
-import com.smartpack.kernelmanager.utils.MBHotplug;
-import com.smartpack.kernelmanager.utils.AutoSMP;
+import com.equinox.kernelmanager.utils.MSMSleeper;
+import com.equinox.kernelmanager.utils.MBHotplug;
+import com.equinox.kernelmanager.utils.AutoSMP;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**

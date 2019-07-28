@@ -140,7 +140,7 @@
 
         <!-- Profile Tile -->
         <service
-            android:name="com.smartpack.kernelmanager.tiles.SpectrumTile"
+            android:name="com.equinox.kernelmanager.tiles.SpectrumTile"
             android:enabled="true"
             android:icon="@drawable/ic_spectrum_logo"
             android:label="@string/profileTile"
@@ -151,7 +151,7 @@
         </service>
 
         <service
-            android:name="com.smartpack.kernelmanager.tiles.KLapseTile"
+            android:name="com.equinox.kernelmanager.tiles.KLapseTile"
             android:enabled="true"
             android:icon="@drawable/ic_klapse"
             android:label="@string/klapse"

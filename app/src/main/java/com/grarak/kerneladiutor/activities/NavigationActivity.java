@@ -100,11 +100,11 @@ import com.grarak.kerneladiutor.utils.tools.Backup;
 import org.frap129.spectrum.SpectrumFragment;
 import org.frap129.spectrum.Spectrum;
 
-import com.smartpack.kernelmanager.fragments.KLapseFragment;
-import com.smartpack.kernelmanager.fragments.SmartPackFragment;
-import com.smartpack.kernelmanager.fragments.WakelockFragment;
-import com.smartpack.kernelmanager.utils.KLapse;
-import com.smartpack.kernelmanager.utils.Wakelocks;
+import com.equinox.kernelmanager.fragments.KLapseFragment;
+import com.equinox.kernelmanager.fragments.SmartPackFragment;
+import com.equinox.kernelmanager.fragments.WakelockFragment;
+import com.equinox.kernelmanager.utils.KLapse;
+import com.equinox.kernelmanager.utils.Wakelocks;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;

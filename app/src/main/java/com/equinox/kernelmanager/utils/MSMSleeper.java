@@ -19,17 +19,13 @@
  *
  */
 
-package com.smartpack.kernelmanager.utils;
+package com.equinox.kernelmanager.utils;
 
 import android.content.Context;
 
-import com.grarak.kerneladiutor.R;
 import com.grarak.kerneladiutor.fragments.ApplyOnBootFragment;
 import com.grarak.kerneladiutor.utils.Utils;
 import com.grarak.kerneladiutor.utils.root.Control;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by sunilpaulmathew <sunil.kde@gmail.com> on September 07, 2018

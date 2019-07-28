@@ -36,7 +36,7 @@ import com.grarak.kerneladiutor.views.recyclerview.SeekBarView;
 import com.grarak.kerneladiutor.views.recyclerview.SelectView;
 import com.grarak.kerneladiutor.views.recyclerview.SwitchView;
 
-import com.smartpack.kernelmanager.utils.MSMThermalSimple;
+import com.equinox.kernelmanager.utils.MSMThermalSimple;
 
 import java.util.ArrayList;
 import java.util.List;

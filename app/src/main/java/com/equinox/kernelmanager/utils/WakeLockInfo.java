@@ -19,7 +19,7 @@
  *
  */
 
-package com.smartpack.kernelmanager.utils;
+package com.equinox.kernelmanager.utils;
 
 /**
  * Created by sunilpaulmathew <sunil.kde@gmail.com> on August 01, 2018

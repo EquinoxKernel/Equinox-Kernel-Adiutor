@@ -37,9 +37,9 @@ import com.grarak.kerneladiutor.views.recyclerview.SelectView;
 import com.grarak.kerneladiutor.views.recyclerview.SwitchView;
 import com.grarak.kerneladiutor.views.recyclerview.XYGraphView;
 
-import com.smartpack.kernelmanager.utils.Adrenoboost;
-import com.smartpack.kernelmanager.utils.DevfreqBoost;
-import com.smartpack.kernelmanager.utils.GPUMisc;
+import com.equinox.kernelmanager.utils.Adrenoboost;
+import com.equinox.kernelmanager.utils.DevfreqBoost;
+import com.equinox.kernelmanager.utils.GPUMisc;
 
 import java.util.ArrayList;
 import java.util.List;

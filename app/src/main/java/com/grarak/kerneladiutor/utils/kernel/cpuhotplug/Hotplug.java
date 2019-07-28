@@ -19,9 +19,9 @@
  */
 package com.grarak.kerneladiutor.utils.kernel.cpuhotplug;
 
-import com.smartpack.kernelmanager.utils.MSMSleeper;
-import com.smartpack.kernelmanager.utils.MBHotplug;
-import com.smartpack.kernelmanager.utils.AutoSMP;
+import com.equinox.kernelmanager.utils.MSMSleeper;
+import com.equinox.kernelmanager.utils.MBHotplug;
+import com.equinox.kernelmanager.utils.AutoSMP;
 
 /**
  * Created by willi on 07.05.16.

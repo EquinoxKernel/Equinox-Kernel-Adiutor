@@ -19,7 +19,7 @@
  *
  */
 
-package com.smartpack.kernelmanager.utils;
+package com.equinox.kernelmanager.utils;
 
 import android.os.Build;
 import android.os.Environment;

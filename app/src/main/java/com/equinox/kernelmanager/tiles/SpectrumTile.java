@@ -19,7 +19,7 @@
  *
  */
 
-package com.smartpack.kernelmanager.tiles;
+package com.equinox.kernelmanager.tiles;
 
 import android.annotation.TargetApi;
 import android.graphics.drawable.Icon;

@@ -19,14 +19,14 @@
  *
  */
 
-package com.smartpack.kernelmanager.tiles;
+package com.equinox.kernelmanager.tiles;
 
 import android.annotation.TargetApi;
 import android.os.Build;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
 
-import com.smartpack.kernelmanager.utils.KLapse;
+import com.equinox.kernelmanager.utils.KLapse;
 
 /*
  * Created by sunilpaulmathew <sunil.kde@gmail.com> on May 02, 2019

@@ -19,7 +19,7 @@
  *
  */
 
-package com.smartpack.kernelmanager.fragments;
+package com.equinox.kernelmanager.fragments;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -45,7 +45,7 @@ import com.grarak.kerneladiutor.views.recyclerview.CardView;
 import com.grarak.kerneladiutor.views.recyclerview.DescriptionView;
 import com.grarak.kerneladiutor.views.recyclerview.RecyclerViewItem;
 
-import com.smartpack.kernelmanager.utils.SmartPack;
+import com.equinox.kernelmanager.utils.SmartPack;
 
 import java.io.File;
 import java.util.List;

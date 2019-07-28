@@ -18,7 +18,7 @@
  * along with SmartPack Kernel Manager.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.smartpack.kernelmanager.utils;
+package com.equinox.kernelmanager.utils;
 
 import android.content.Context;
 
