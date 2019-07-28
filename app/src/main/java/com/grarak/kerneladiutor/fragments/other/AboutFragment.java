@@ -119,7 +119,7 @@ public class AboutFragment extends RecyclerViewFragment {
                     Utils.toast(R.string.no_internet, getActivity());
                     return;
                 }
-                Utils.launchUrl("https://forum.xda-developers.com/android/apps-games/app-smartpack-kernel-manager-t3854717", getActivity());
+                Utils.launchUrl("https://forum.xda-developers.com/", getActivity());
             }
         });
 
@@ -133,7 +133,7 @@ public class AboutFragment extends RecyclerViewFragment {
                     Utils.toast(R.string.no_internet, getActivity());
                     return;
                 }
-                Utils.launchUrl("https://github.com/SmartPack/SmartPack-Kernel-Manager", requireActivity());
+                Utils.launchUrl("https://github.com/ShanuDey/Equinox-KA", requireActivity());
             }
         });
 
@@ -147,7 +147,7 @@ public class AboutFragment extends RecyclerViewFragment {
                     Utils.toast(R.string.no_internet, getActivity());
                     return;
                 }
-                Utils.launchUrl("https://raw.githubusercontent.com/SmartPack/SmartPack-Kernel-Manager/master/change-logs.md", getActivity());
+                Utils.launchUrl("https://raw.githubusercontent.com/ShanuDey/Equinox-KA/master/change-logs.md", getActivity());
             }
         });
 
@@ -171,11 +171,11 @@ public class AboutFragment extends RecyclerViewFragment {
                 } else {
                     donate_to_me.setMessage(getString(R.string.donate_me_message) + getString(R.string.donate_me_playstore));
                     donate_to_me.setNeutralButton(getString(R.string.purchase_app), (dialogInterface, i) -> {
-                        Utils.launchUrl("https://play.google.com/store/apps/details?id=com.smartpack.donate", getActivity());
+                        Utils.launchUrl("https://play.google.com/store/apps", getActivity());
                     });
                 }
                 donate_to_me.setPositiveButton(getString(R.string.paypal_donation), (dialog1, id1) -> {
-                    Utils.launchUrl("https://www.paypal.me/sunilpaulmathew", getActivity());
+                    Utils.launchUrl("https://www.paypal.me/", getActivity());
                 });
                 donate_to_me.show();
             }
@@ -255,7 +255,7 @@ public class AboutFragment extends RecyclerViewFragment {
                         Utils.toast(R.string.no_internet, getActivity());
                         return;
                     }
-                    Utils.launchUrl("https://github.com/SmartPack/", getActivity());
+                    Utils.launchUrl("https://github.com/sujitroy/Equinox-kernel", getActivity());
                 }
             });
             return rootView;
