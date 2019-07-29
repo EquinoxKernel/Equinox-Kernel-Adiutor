@@ -3,7 +3,7 @@
 ## Equinox Kernel Adiutor is a modified version of official Kernel Adiutor, which is originally developed by Willi Ye aka Grarak. All the credits goes to the original developer.
 
 ## Download
-### ! [Download latest build](https://github.com/equinox-kernel/Equinox-Kernel-Adiutor/tree/equinox/download) ! [All builds](https://github.com/equinox-kernel/Equinox-Kernel-Adiutor/releases) !
+### ! [Download latest build](https://github.com/equinox-kernel/Equinox-Kernel-Adiutor/blob/equinox/download/com.equinox.kerneladiutor.apk?raw=true) ! [All builds](https://github.com/equinox-kernel/Equinox-Kernel-Adiutor/releases) !
 ## Added features over official KA
 
 * CPU Input Boost & Devfreq Boost (Sultanxda).
