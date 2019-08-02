@@ -23,6 +23,7 @@ package com.equinox.kernelmanager.fragments;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -31,6 +32,8 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Environment;
+import android.os.RemoteException;
+import android.util.Log;
 
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
@@ -643,6 +646,25 @@ public class SmartPackFragment extends RecyclerViewFragment {
                     mProgressDialog.dismiss();
                 } catch (IllegalArgumentException ignored) {
                 }
+
+                Dialog askForReboot = new Dialog(getActivity())
+                        .setMessage("Reboot is must after flashing kernel. Do you want to reboot?")
+                        .setPositiveButton("Reboot Now", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Log.v("shanu","reboot now");
+                                Log.v("shanu",""+RootUtils.runCommand("reboot"));
+                            }
+                        })
+                        .setNegativeButton("Later", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Log.v("shanu","reboot later");
+                                dialog.dismiss();
+                            }
+                        });
+                askForReboot.show();
+
             }
         }.execute();
     }
