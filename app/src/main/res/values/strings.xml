@@ -1000,7 +1000,7 @@
     <string name="up_to_date_message">Congrats! You are up-to-date</string>
 
     <!-- App Updater -->
-    <string name="appupdater_json" translatable="false">https://raw.githubusercontent.com/ShanuDey/Equinox-KA/master/download/App-update.json</string>
+    <string name="appupdater_json" translatable="false">https://raw.githubusercontent.com/EquinoxKernel/EquinoxKernelAdiutorReleases/master/download/App-update.json</string>
     <string name="appupdater_update_title">New update available!\nv%2$s</string>
     <string name="check_update">Check for Updates</string>
     <string name="check_update_summary">Check for new versions of Equinox Kernel Adiutor</string>
