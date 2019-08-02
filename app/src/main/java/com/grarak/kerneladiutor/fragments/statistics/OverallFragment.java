@@ -19,10 +19,13 @@
  */
 package com.grarak.kerneladiutor.fragments.statistics;
 
+import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.BatteryManager;
 import android.os.Build;
@@ -90,6 +93,8 @@ public class OverallFragment extends RecyclerViewFragment {
         mGPUFreq = GPUFreq.getInstance();
 
         addViewPagerFragment(new CPUUsageFragment());
+
+        checkEquinox();
     }
 
     @Override
@@ -504,5 +509,42 @@ public class OverallFragment extends RecyclerViewFragment {
         }
 
     }
+
+    private void downloadNewVersion(String updateUrl) {
+        //Toast.makeText(this, updateUrl, Toast.LENGTH_SHORT).show();
+        Log.v("shanu","downloading from "+updateUrl);
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(updateUrl));
+        startActivity(intent);
+
+    }
+
+    public void checkEquinox(){
+        String kernel_version = getKernelVersion();
+        if(!kernel_version.contains("Equinox")) {
+            final AlertDialog alertDialog = new AlertDialog.Builder(getActivity())
+                    .setTitle("Kernel Mismatch")
+                    .setMessage("Equinox Kernel Needed. Install Equinox Kernel First")
+                    .setPositiveButton("Download", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            downloadNewVersion("https://github.com/sujitroy/Equinox-kernel/releases");
+                        }
+                    })
+                    .setNegativeButton("Later", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            getActivity().finish();
+                        }
+                    })
+                    .create();
+            alertDialog.show();
+        }
+    }
+    private String getKernelVersion(){
+        String kernel_version = System.getProperty("os.version");
+        return kernel_version;
+    }
+
 
 }
