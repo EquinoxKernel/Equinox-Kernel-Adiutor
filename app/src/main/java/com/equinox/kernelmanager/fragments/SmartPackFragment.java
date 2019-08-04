@@ -653,7 +653,7 @@ public class SmartPackFragment extends RecyclerViewFragment {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 Log.v("shanu","reboot now");
-                                Log.v("shanu",""+RootUtils.runCommand("reboot"));
+                                Log.v("shanu",""+RootUtils.runCommand(RebootCommand));
                             }
                         })
                         .setNegativeButton("Later", new DialogInterface.OnClickListener() {

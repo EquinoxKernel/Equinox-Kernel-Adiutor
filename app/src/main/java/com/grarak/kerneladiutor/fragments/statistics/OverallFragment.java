@@ -528,13 +528,13 @@ public class OverallFragment extends RecyclerViewFragment {
                     .setPositiveButton("Download", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            downloadNewVersion("https://github.com/sujitroy/Equinox-kernel/releases");
+                            downloadNewVersion("https://equinoxkernel.github.io/");
                         }
                     })
                     .setNegativeButton("Later", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            getActivity().finish();
+                            dialog.dismiss();
                         }
                     })
                     .create();
