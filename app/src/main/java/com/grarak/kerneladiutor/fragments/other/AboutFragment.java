@@ -81,7 +81,7 @@ public class AboutFragment extends RecyclerViewFragment {
     protected void addItems(List<RecyclerViewItem> items) {
         aboutInit(items);
         librariesInit(items);
-        translationsInit(items);
+        //translationsInit(items);
     }
 
     private void aboutInit(List<RecyclerViewItem> items) {
@@ -119,7 +119,7 @@ public class AboutFragment extends RecyclerViewFragment {
                     Utils.toast(R.string.no_internet, getActivity());
                     return;
                 }
-                Utils.launchUrl("https://forum.xda-developers.com/", getActivity());
+                Utils.launchUrl("https://t.me/EquinoxKernel", getActivity());
             }
         });
 
@@ -183,9 +183,9 @@ public class AboutFragment extends RecyclerViewFragment {
 
         about.addItem(updatecheck);
         about.addItem(support);
-        about.addItem(sourcecode);
-        about.addItem(changelogs);
-        about.addItem(donatetome);
+        //about.addItem(sourcecode);
+        //about.addItem(changelogs);
+        //about.addItem(donatetome);
 
         items.add(about);
     }
