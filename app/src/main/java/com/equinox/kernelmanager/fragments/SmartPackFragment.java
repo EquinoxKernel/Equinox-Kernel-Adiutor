@@ -61,7 +61,7 @@ public class SmartPackFragment extends RecyclerViewFragment {
     private boolean mPermissionDenied;
 
     private String RebootCommand = "am broadcast android.intent.action.ACTION_SHUTDOWN " + "&&" +
-            " sync && echo 3 > /proc/sys/vm/drop_caches && sync && sleep 3 && reboot";
+            " sync && echo 3 > /proc/sys/vm/drop_caches && sync && sleep 3 && svc power reboot";
     private String mPath;
 
     @Override
