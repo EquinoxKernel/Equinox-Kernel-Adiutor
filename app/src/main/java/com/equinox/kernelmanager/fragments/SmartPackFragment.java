@@ -59,9 +59,16 @@ import java.util.List;
 
 public class SmartPackFragment extends RecyclerViewFragment {
     private boolean mPermissionDenied;
-
-    private String RebootCommand = "am broadcast android.intent.action.ACTION_SHUTDOWN " + "&&" +
-            " sync && echo 3 > /proc/sys/vm/drop_caches && sync && sleep 3 && svc power reboot";
+    
+    private String prepareReboot = "am broadcast android.intent.action.ACTION_SHUTDOWN " + "&&" +
+            " sync " + "&&" +
+            " echo 3 > /proc/sys/vm/drop_caches " + "&&" +
+            " sync " + "&&" +
+            " sleep 3 " + "&&" +
+            " svc power reboot";
+    private String shutdownCommand = "svc power shutdown";
+    private String rebootCommand = "svc power reboot";
+    
     private String mPath;
 
     @Override
@@ -214,7 +221,7 @@ public class SmartPackFragment extends RecyclerViewFragment {
                                     noflash.setNeutralButton(getString(R.string.cancel), (dialogInterface, i) -> {
                                     });
                                     noflash.setPositiveButton(getString(R.string.reboot), (dialog2, id2) -> {
-                                        new Execute().execute(RebootCommand + " recovery");
+                                        new Execute().execute(rebootCommand + " recovery");
                                     });
                                     noflash.show();
                                 }
@@ -368,7 +375,7 @@ public class SmartPackFragment extends RecyclerViewFragment {
                     });
                     reboot.setPositiveButton(getString(R.string.reboot_now), (dialog2, id2) -> {
                         new Execute().execute("rm -rf /data/data/com.smartpack.kernelmanager/");
-                        new Execute().execute(RebootCommand);
+                        new Execute().execute(rebootCommand);
                     });
                     reboot.show();
                 });
@@ -456,7 +463,7 @@ public class SmartPackFragment extends RecyclerViewFragment {
                     });
                     wipecache.setPositiveButton(getString(R.string.wipe_cache), (dialog1, id1) -> {
                         new Execute().execute("echo --wipe_cache > /cache/recovery/command");
-                        new Execute().execute(RebootCommand + " recovery");
+                        new Execute().execute(prepareReboot + " recovery");
                     });
                     wipecache.show();
                 }
@@ -477,13 +484,53 @@ public class SmartPackFragment extends RecyclerViewFragment {
                     });
                     wipedata.setPositiveButton(getString(R.string.wipe_data), (dialog1, id1) -> {
                         new Execute().execute("echo --wipe_data > /cache/recovery/command");
-                        new Execute().execute(RebootCommand + " recovery");
+                        new Execute().execute(prepareReboot + " recovery");
                     });
                     wipedata.show();
                 }
             });
             advanced.addItem(wipe_data);
         }
+
+        DescriptionView turnoff = new DescriptionView();
+        turnoff.setTitle(getString(R.string.turn_off));
+        turnoff.setSummary(getString(R.string.turn_off_summary));
+        turnoff.setOnItemClickListener(new RecyclerViewItem.OnItemClickListener() {
+            @Override
+            public void onClick(RecyclerViewItem item) {
+                Dialog turnoff = new Dialog(getActivity());
+                turnoff.setIcon(R.mipmap.ic_launcher);
+                turnoff.setTitle(getString(R.string.sure_question));
+                turnoff.setMessage(getString(R.string.turn_off_message));
+                turnoff.setNeutralButton(getString(R.string.cancel), (dialogInterface, i) -> {
+                });
+                turnoff.setPositiveButton(getString(R.string.turn_off), (dialog1, id1) -> {
+                    new Execute().execute(shutdownCommand);
+                });
+                turnoff.show();
+            }
+        });
+        smartpack.addItem(turnoff);
+
+        DescriptionView reboot = new DescriptionView();
+        reboot.setTitle(getString(R.string.reboot));
+        reboot.setSummary(getString(R.string.reboot_summary));
+        reboot.setOnItemClickListener(new RecyclerViewItem.OnItemClickListener() {
+            @Override
+            public void onClick(RecyclerViewItem item) {
+                Dialog reboot = new Dialog(getActivity());
+                reboot.setIcon(R.mipmap.ic_launcher);
+                reboot.setTitle(getString(R.string.sure_question));
+                reboot.setMessage(getString(R.string.normal_reboot_message));
+                reboot.setNeutralButton(getString(R.string.cancel), (dialogInterface, i) -> {
+                });
+                reboot.setPositiveButton(getString(R.string.reboot), (dialog1, id1) -> {
+                    new Execute().execute(rebootCommand);
+                });
+                reboot.show();
+            }
+        });
+        smartpack.addItem(reboot);
 
         DescriptionView recoveryreboot = new DescriptionView();
         recoveryreboot.setTitle(getString(R.string.reboot_recovery));
@@ -498,7 +545,7 @@ public class SmartPackFragment extends RecyclerViewFragment {
                 recoveryreboot.setNeutralButton(getString(R.string.cancel), (dialogInterface, i) -> {
                 });
                 recoveryreboot.setPositiveButton(getString(R.string.reboot), (dialog1, id1) -> {
-                    new Execute().execute(RebootCommand + " recovery");
+                    new Execute().execute(prepareReboot + " recovery");
                 });
                 recoveryreboot.show();
             }
@@ -518,7 +565,7 @@ public class SmartPackFragment extends RecyclerViewFragment {
                 bootloaderreboot.setNeutralButton(getString(R.string.cancel), (dialogInterface, i) -> {
                 });
                 bootloaderreboot.setPositiveButton(getString(R.string.reboot), (dialog1, id1) -> {
-                    new Execute().execute(RebootCommand + " bootloader");
+                    new Execute().execute(prepareReboot + " bootloader");
                 });
                 bootloaderreboot.show();
             }
@@ -567,7 +614,7 @@ public class SmartPackFragment extends RecyclerViewFragment {
             @Override
             protected Void doInBackground(Void... voids) {
                 SmartPack.autoFlash();
-                RootUtils.runCommand(RebootCommand);
+                RootUtils.runCommand(rebootCommand);
                 return null;
             }
             @Override
@@ -596,7 +643,7 @@ public class SmartPackFragment extends RecyclerViewFragment {
             protected Void doInBackground(Void... voids) {
                 SmartPack.recoveryFlash();
                 SmartPack.cleanFlashFolder();
-                RootUtils.runCommand(RebootCommand + " recovery");
+                RootUtils.runCommand(rebootCommand + " recovery");
                 return null;
             }
             @Override
@@ -653,7 +700,7 @@ public class SmartPackFragment extends RecyclerViewFragment {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 Log.v("shanu","reboot now");
-                                Log.v("shanu",""+RootUtils.runCommand(RebootCommand));
+                                Log.v("shanu",""+RootUtils.runCommand(rebootCommand));
                             }
                         })
                         .setNegativeButton("Later", new DialogInterface.OnClickListener() {

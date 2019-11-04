@@ -980,10 +980,15 @@
     <string name="download_failed_message">\nAre you running an unsupported android version?\n\nIf not, please check your internet connection!\n\n</string>
     <string name="advance_options">Advanced Options</string>
     <string name="reboot">Reboot</string>
+    <string name="reboot_summary">Reboot your device</string>
+    <string name="normal_reboot_message">\nYour device will be rebooted.\n</string>
     <string name="reboot_now">Reboot Now</string>
     <string name="reboot_later">Reboot Later</string>
     <string name="reboot_recovery">Reboot Recovery</string>
     <string name="reboot_bootloader">Reboot Bootloader</string>
+    <string name="turn_off">Turn Off</string>
+    <string name="turn_off_message">\nYour device will be Turned Off.\n</string>
+    <string name="turn_off_summary">Turn Off your device</string>
     <string name="wipe_data">Wipe Data</string>
     <string name="wipe_cache">Wipe Cache</string>
     <string name="backing_up">Backing up</string>
