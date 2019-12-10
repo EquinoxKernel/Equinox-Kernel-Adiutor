@@ -346,6 +346,14 @@
     <string name="hotplug_load">Hotplug Load</string>
     <string name="hotplug_rate">Hotplug Rate</string>
     <string name="hotplug_rq">Hotplug RQ</string>
+    <string name="aio_hotplug">AiO Hotplug</string>
+    <string name="aio_hotplug_summary">All in One HotPlug for Qualcomm devices. Developed by Shoaib0597.</string>
+    <string name="max_cpu_online_big">Maximum big CPUs Online</string>
+    <string name="max_cpu_online_big_summary">Maximum number of big CPUs that will be online.</string>
+    <string name="max_cpu_online_little">Maximum LITTLE CPUs Online</string>
+    <string name="max_cpu_online_little_summary">Maximum number of LITTLE CPUs that will be online.</string>
+    <string name="nr_max_cpu">Maximum Online CPUs</string>
+    <string name="nr_min_cpu">Minimum Online CPUs</string>
     <string name="adv_sett">Advanced Settings</string>
 
     <!-- CPU Voltage -->
@@ -556,7 +564,7 @@
     <!-- K-lapse -->
     <string name="klapse">K-lapse</string>
     <string name="klapse_summary">Select preferred K-lapse mode, a kernel level live-display module by tanish2k09. This shouldn\'t be Turned-Off to tune the rest of K-lapse parameters.</string>
-    <string name="turn_off">Turned-Off</string>
+    <string name="klapse_off">Turned-Off</string>
     <string name="time_scale">Time Based Scaling</string>
     <string name="bright_scale">Brightness Based Scaling</string>
     <string name="night_mode_schedule">Night Mode Schedule</string>
@@ -605,7 +613,7 @@
     <string name="dt2w_charging">DoubleTap2Wake while charging</string>
     <string name="dt2w_s2w">DoubleTap2Wake + Sweep2Wake</string>
     <string name="dt2w_s2w_charging">DoubleTap2Wake + Sweep2Wake while charging</string>
-    <string name="s2s_summary">Lock you device by swiping on the screen.</string>
+    <string name="s2s_summary">Lock your device by swiping on the screen.</string>
     <string name="s2s_right">Sweep Right</string>
     <string name="s2s_left">Sweep Left</string>
     <string name="s2s_any">Sweep Left or Right</string>
@@ -850,7 +858,7 @@
     <string name="spec_performance">Performance</string>
     <string name="spec_performance_summary">Tuned for top-tier performance in standard tasks with many fewer regressions than Balanced, but maintains battery by limiting graphics.</string>
     <string name="spec_battery">Battery</string>
-    <string name="spec_battery_summary">The ultra-conservative profile that lets performance take a hit in order to archive long-lasting battery life.</string>
+    <string name="spec_battery_summary">The ultra-conservative profile that lets performance take a hit in order to achive long-lasting battery life.</string>
     <string name="spec_gaming">Gaming</string>
     <string name="spec_gaming_summary">Identical to performance in most areas other than the unlocked Graphics performance.</string>
 
@@ -916,7 +924,7 @@
 
     <!-- Profile -->
     <string name="apply_on_boot_not_available">In profiles mode your changes won\'t have an impact on apply on boot.</string>
-    <string name="profile_warning">Everything you change here is gonna be saved to your profile. But attention! Your settings will also get applied, but won\'t get saved to apply on boot.</string>
+    <string name="profile_warning">Everything you change here is going to be saved to your profile. But attention! Your settings will also get applied, but won\'t get saved to apply on boot.</string>
     <string name="no_changes">No changes made!</string>
     <string name="apply_question">Apply %s?</string>
     <string name="append">Append</string>
@@ -930,7 +938,7 @@
     <string name="profile_tile_summary">Show a tile which allows you to select a profile.</string>
     <string name="profile_select">Select Profile</string>
     <string name="applying_profile">Applying %s!</string>
-    <string name="no_profiles">No profile found! You have to create them first.</string>
+    <string name="no_profiles">No profiles found! You have to create them first.</string>
     <string name="sections_disabled">All sections disabled! No profiles for you.</string>
     <string name="new_mode">New</string>
     <string name="current_settings">Current settings</string>
@@ -953,7 +961,7 @@
 
     <!-- SmartPack -->
     <string name="support">Support</string>
-    <string name="support_summary">Visit support page at xda-developers.com</string>
+    <string name="support_summary">For support join our Telegram Group</string>
     <string name="website">Website</string>
     <string name="website_summary">Visit Equinox homepage</string>
     <string name="download">Download</string>
@@ -972,10 +980,15 @@
     <string name="download_failed_message">\nAre you running an unsupported android version?\n\nIf not, please check your internet connection!\n\n</string>
     <string name="advance_options">Advanced Options</string>
     <string name="reboot">Reboot</string>
+    <string name="reboot_summary">Reboot your device</string>
+    <string name="normal_reboot_message">\nYour device will be rebooted.\n</string>
     <string name="reboot_now">Reboot Now</string>
     <string name="reboot_later">Reboot Later</string>
     <string name="reboot_recovery">Reboot Recovery</string>
     <string name="reboot_bootloader">Reboot Bootloader</string>
+    <string name="turn_off">Turn Off</string>
+    <string name="turn_off_message">\nYour device will be Turned Off.\n</string>
+    <string name="turn_off_summary">Turn Off your device</string>
     <string name="wipe_data">Wipe Data</string>
     <string name="wipe_cache">Wipe Cache</string>
     <string name="backing_up">Backing up</string>
@@ -1000,7 +1013,7 @@
     <string name="up_to_date_message">Congrats! You are up-to-date</string>
 
     <!-- App Updater -->
-    <string name="appupdater_json" translatable="false">https://raw.githubusercontent.com/ShanuDey/Equinox-KA/master/download/App-update.json</string>
+    <string name="appupdater_json" translatable="false">https://raw.githubusercontent.com/EquinoxKernel/EquinoxKernelAdiutorReleases/master/download/App-update.json</string>
     <string name="appupdater_update_title">New update available!\nv%2$s</string>
     <string name="check_update">Check for Updates</string>
     <string name="check_update_summary">Check for new versions of Equinox Kernel Adiutor</string>
@@ -1088,6 +1101,10 @@
     <string name="donate_me_playstore">\nPlease note: I can accept donations either via PayPal, or through Equinox Donation Package in PlayStore. Moreover, purchasing the donation package will unlock some hidden features in this app.\n</string>
     <string name="purchase_app">Donation App</string>
     <string name="paypal_donation">PayPal</string>
+    <string name="auto_update_check">Auto Update Check</string>
+    <string name="auto_update_check_summary">Check for new versions of Equinox Kernel Adiutor on app launch</string>
+    <string name="licence">License</string>
+    <string name="licence_message" translatable="false">Equinox Kernel Adiutor is a free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.\n\nEquinox Kernel Adiutor is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License along with Equinox Kernel Adiutor. If not, visit http://www.gnu.org/licenses/.</string>
 
     <!-- Contributors -->
     <string name="commits">%d commits</string>
@@ -1106,7 +1123,7 @@
     <string name="add_new_features">Q5. Could you add feature x and y to your App?</string>
     <string name="add_new_features_summary">Ans. I’m happy to check and add, if possible, any useful features (unless it is too experimental or dangerous) to my App. Please give your suggestions in the xda-developers page.</string>
     <string name="what_best">Q6. Can you tell me the best settings for performance/SOT?</string>
-    <string name="what_best_summary">Ans. It\'s depends on several factors. I can only share my favorite settings that give me the best results in my favorite ROM.</string>
+    <string name="what_best_summary">Ans. It depends on several factors. I can only share my favorite settings that give me the best results in my favorite ROM.</string>
     <string name="cache_dalvik">Q7. Do I need to wipe cache/dalvik cache before/after flashing a Kernel?</string>
     <string name="cache_dalvik_summary">Ans. NO. Because the kernel does not even ‘see’ cache/dalvik cache.</string>
     <string name="found_bugs">Q8. I found a bug in your App, what do I do?</string>

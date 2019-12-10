@@ -19,10 +19,13 @@
  */
 package com.grarak.kerneladiutor.fragments.statistics;
 
+import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.BatteryManager;
 import android.os.Build;
@@ -45,6 +48,7 @@ import com.grarak.kerneladiutor.R;
 import com.grarak.kerneladiutor.fragments.BaseFragment;
 import com.grarak.kerneladiutor.fragments.RecyclerViewFragment;
 import com.grarak.kerneladiutor.utils.AppUpdaterTask;
+import com.grarak.kerneladiutor.utils.Prefs;
 import com.grarak.kerneladiutor.utils.Utils;
 import com.grarak.kerneladiutor.utils.kernel.cpu.CPUFreq;
 import com.grarak.kerneladiutor.utils.kernel.gpu.GPUFreq;
@@ -90,6 +94,8 @@ public class OverallFragment extends RecyclerViewFragment {
         mGPUFreq = GPUFreq.getInstance();
 
         addViewPagerFragment(new CPUUsageFragment());
+
+        checkEquinox();
     }
 
     @Override
@@ -393,10 +399,10 @@ public class OverallFragment extends RecyclerViewFragment {
                                  @Nullable Bundle savedInstanceState) {
 
             //Initialize auto app update check
-            if (Build.VERSION.SDK_INT >= 23) {
-		requestPermissions(new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+            if (Utils.isNetworkAvailable(getContext()) && Prefs.getBoolean("auto_update", true, getActivity()) == true) {
+                requestPermissions(new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+                AppUpdaterTask.autoappCheck(getActivity());
             }
-            AppUpdaterTask.autoappCheck(getActivity());
 
             mHandler = new Handler();
             mUsages = new ArrayList<>();
@@ -504,5 +510,42 @@ public class OverallFragment extends RecyclerViewFragment {
         }
 
     }
+
+    private void downloadNewVersion(String updateUrl) {
+        //Toast.makeText(this, updateUrl, Toast.LENGTH_SHORT).show();
+        Log.v("shanu","downloading from "+updateUrl);
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(updateUrl));
+        startActivity(intent);
+
+    }
+
+    public void checkEquinox(){
+        String kernel_version = getKernelVersion();
+        if(!kernel_version.contains("Equinox")) {
+            final AlertDialog alertDialog = new AlertDialog.Builder(getActivity())
+                    .setTitle("Kernel Mismatch")
+                    .setMessage("Equinox Kernel Needed. Install Equinox Kernel First")
+                    .setPositiveButton("Download", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            downloadNewVersion("https://equinoxkernel.github.io/");
+                        }
+                    })
+                    .setNegativeButton("Later", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    })
+                    .create();
+            alertDialog.show();
+        }
+    }
+    private String getKernelVersion(){
+        String kernel_version = System.getProperty("os.version");
+        return kernel_version;
+    }
+
 
 }

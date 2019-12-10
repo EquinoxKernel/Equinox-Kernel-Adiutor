@@ -30,12 +30,14 @@ import com.grarak.kerneladiutor.R;
 import com.grarak.kerneladiutor.BuildConfig;
 import com.grarak.kerneladiutor.fragments.BaseFragment;
 import com.grarak.kerneladiutor.fragments.RecyclerViewFragment;
+import com.grarak.kerneladiutor.utils.Prefs;
 import com.grarak.kerneladiutor.utils.Utils;
 import com.grarak.kerneladiutor.utils.AppUpdaterTask;
 import com.grarak.kerneladiutor.views.dialog.Dialog;
 import com.grarak.kerneladiutor.views.recyclerview.CardView;
 import com.grarak.kerneladiutor.views.recyclerview.DescriptionView;
 import com.grarak.kerneladiutor.views.recyclerview.RecyclerViewItem;
+import com.grarak.kerneladiutor.views.recyclerview.SwitchView;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -50,6 +52,7 @@ public class AboutFragment extends RecyclerViewFragment {
     static {
         sLibraries.put("Google,AndroidX Library", "https://developer.android.com/jetpack/androidx");
         sLibraries.put("Google,NavigationView library", "https://developer.android.com/reference/com/google/android/material/navigation/NavigationView");
+	    sLibraries.put("Chris Renshaw,Auto-flash", "https://github.com/osm0sis");
         sLibraries.put("Joe Maples,Spectrum", "https://github.com/frap129/spectrum");
         sLibraries.put("Ozodrukh,CircularReveal", "https://github.com/ozodrukh/CircularReveal");
         sLibraries.put("Roman Nurik,dashclock", "https://github.com/romannurik/dashclock");
@@ -81,7 +84,7 @@ public class AboutFragment extends RecyclerViewFragment {
     protected void addItems(List<RecyclerViewItem> items) {
         aboutInit(items);
         librariesInit(items);
-        translationsInit(items);
+        //translationsInit(items);
     }
 
     private void aboutInit(List<RecyclerViewItem> items) {
@@ -109,6 +112,17 @@ public class AboutFragment extends RecyclerViewFragment {
             }
         });
 
+        SwitchView autoUpdateCheck = new SwitchView();
+        autoUpdateCheck.setTitle(getString(R.string.auto_update_check));
+        autoUpdateCheck.setSummary(getString(R.string.auto_update_check_summary));
+        autoUpdateCheck.setChecked(Prefs.getBoolean("auto_update", true, getActivity()));
+        autoUpdateCheck.addOnSwitchListener(new SwitchView.OnSwitchListener() {
+            @Override
+            public void onChanged(SwitchView switchview, boolean isChecked) {
+                Prefs.saveBoolean("auto_update", isChecked, getActivity());
+            }
+        });
+
         DescriptionView support = new DescriptionView();
         support.setTitle(getString(R.string.support));
         support.setSummary(getString(R.string.support_summary));
@@ -119,7 +133,7 @@ public class AboutFragment extends RecyclerViewFragment {
                     Utils.toast(R.string.no_internet, getActivity());
                     return;
                 }
-                Utils.launchUrl("https://forum.xda-developers.com/", getActivity());
+                Utils.launchUrl("https://t.me/EquinoxKernel", getActivity());
             }
         });
 
@@ -182,10 +196,11 @@ public class AboutFragment extends RecyclerViewFragment {
         });
 
         about.addItem(updatecheck);
+        about.addItem(autoUpdateCheck);
         about.addItem(support);
-        about.addItem(sourcecode);
-        about.addItem(changelogs);
-        about.addItem(donatetome);
+        //about.addItem(sourcecode);
+        //about.addItem(changelogs);
+        //about.addItem(donatetome);
 
         items.add(about);
     }
@@ -251,11 +266,14 @@ public class AboutFragment extends RecyclerViewFragment {
             rootView.findViewById(R.id.image).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (!Utils.isNetworkAvailable(getContext())) {
-                        Utils.toast(R.string.no_internet, getActivity());
-                        return;
-                    }
-                    Utils.launchUrl("https://github.com/sujitroy/Equinox-kernel", getActivity());
+                    Dialog licence = new Dialog(getActivity());
+                    licence.setIcon(R.mipmap.ic_launcher);
+                    licence.setTitle(getString(R.string.licence));
+                    licence.setMessage(getString(R.string.licence_message));
+                    licence.setPositiveButton(getString(R.string.cancel), (dialogInterface, i) -> {
+                    });
+
+                    licence.show();
                 }
             });
             return rootView;

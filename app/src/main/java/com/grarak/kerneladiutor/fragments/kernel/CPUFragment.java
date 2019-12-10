@@ -117,7 +117,8 @@ public class CPUFragment extends RecyclerViewFragment {
             cpuQuietInit(items);
         }
         if (mCPUBoost.supported() || mCPUInputBoost.supported() || Misc.hasCpuTouchBoost()
-		|| Misc.hasDynStuneBoost() || Misc.hasDynStuneBoostDuration()) {
+                || Misc.hasDynStuneBoost() || Misc.hasDynStuneBoostDuration()
+                || Misc.hasSchedBoostSettings()) {
             cpuBoostInit(items);
         }
         if (MSMLimiter.supported()) {
@@ -435,6 +436,46 @@ public class CPUFragment extends RecyclerViewFragment {
             });
 
             views.add(cpuQuietGovernors);
+        }
+
+        if (Misc.hasCpuQuietNrMaxCPUs()) {
+            GenericSelectView NrMaxCPUs = new GenericSelectView();
+            NrMaxCPUs.setSummary(getString(R.string.nr_max_cpu));
+            NrMaxCPUs.setValue(Misc.getCpuQuietNrMaxCPUs());
+            NrMaxCPUs.setInputType(InputType.TYPE_CLASS_NUMBER);
+            NrMaxCPUs.setOnGenericValueListener(new GenericSelectView.OnGenericValueListener() {
+                @Override
+                public void onGenericValueSelected(GenericSelectView genericSelectView, String value) {
+                    Misc.setCpuQuietNrMaxCPUs(value, getActivity());
+                    genericSelectView.setValue(value);
+                    getHandler().postDelayed(() -> {
+                                NrMaxCPUs.setValue(Misc.getCpuQuietNrMaxCPUs());
+                            },
+                            500);
+                }
+            });
+
+            views.add(NrMaxCPUs);
+        }
+
+        if (Misc.hasCpuQuietNrMinCPUs()) {
+            GenericSelectView NrMinCPUs = new GenericSelectView();
+            NrMinCPUs.setSummary(getString(R.string.nr_min_cpu));
+            NrMinCPUs.setValue(Misc.getCpuQuietNrMinCPUs());
+            NrMinCPUs.setInputType(InputType.TYPE_CLASS_NUMBER);
+            NrMinCPUs.setOnGenericValueListener(new GenericSelectView.OnGenericValueListener() {
+                @Override
+                public void onGenericValueSelected(GenericSelectView genericSelectView, String value) {
+                    Misc.setCpuQuietNrMinCPUs(value, getActivity());
+                    genericSelectView.setValue(value);
+                    getHandler().postDelayed(() -> {
+                                NrMinCPUs.setValue(Misc.getCpuQuietNrMinCPUs());
+                            },
+                            500);
+                }
+            });
+
+            views.add(NrMinCPUs);
         }
 
         if (views.size() > 0) {
